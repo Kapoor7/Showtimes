@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MovieApp">
+   <children>
+      <Label alignment="CENTER" layoutX="276.0" layoutY="176.0" prefHeight="51.0" prefWidth="191.0" text="Choose one" textFill="#b29292">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnMovies" buttonType="RAISED" layoutX="40.0" layoutY="201.0" onAction="#btnMoviesClicked" prefHeight="89.0" prefWidth="174.0" ripplerFill="#b90a0a" text="Movies" textFill="#c0b283">
+         <font>
+            <Font name="Microsoft YaHei Light" size="32.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnCinemas" buttonType="RAISED" layoutX="531.0" layoutY="201.0" onAction="#btnCinemasClicked" prefHeight="89.0" prefWidth="174.0" ripplerFill="#b90a0a" text="Cinemas" textFill="#c0b283">
+         <font>
+            <Font name="Microsoft YaHei Light" size="32.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="296.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-popcorn-96.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

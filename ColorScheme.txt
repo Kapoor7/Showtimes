@@ -1,0 +1,4 @@
+ #373737 Charcoal
+ #F4F4F4 Paper
+ #DCD0C0 Silk
+ #C0B283 Pale Gold
