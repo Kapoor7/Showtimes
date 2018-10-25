@@ -1,112 +1,246 @@
-import com.jfoenix.controls.JFXButton
-import javafx.collections.FXCollections
-import javafx.collections.ObservableList
-import javafx.event.ActionEvent
-import javafx.fxml.FXML
-import javafx.fxml.FXMLLoader
-import javafx.fxml.Initializable
-import javafx.scene.Scene
-import javafx.scene.control.TableColumn
-import javafx.scene.control.TableRow
-import javafx.scene.control.TableView
-import javafx.scene.control.cell.PropertyValueFactory
-import javafx.stage.Stage
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
-import java.net.URL
-import java.sql.Connection
-import java.sql.PreparedStatement
-import java.sql.ResultSet
-import java.util.ResourceBundle
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
-class MovieSceneController : Initializable {
-
-    @FXML
-    private val btnHome: JFXButton? = null
-
-
-    internal var movieModels = FXCollections.observableArrayList<MovieModel>()
+public class MovieSceneController implements Initializable{
 
     @FXML
-    private val table: TableView<MovieModel>? = null
+    private JFXButton btnHome;
 
     @FXML
-    private val colID: TableColumn<MovieModel, String>? = null
+    private JFXButton btnApply;
 
     @FXML
-    private val colTitle: TableColumn<MovieModel, String>? = null
+    private JFXCheckBox chkG;
 
     @FXML
-    private val colRating: TableColumn<MovieModel, String>? = null
-
+    private JFXCheckBox chkPg13;
 
     @FXML
-    internal fun btnHomeClicked(event: ActionEvent) {
-        try {
-            val loader = FXMLLoader(javaClass.getResource("MovieApp.fxml"))
-            val stage = btnHome!!.scene.window as Stage
+    private JFXCheckBox chkR;
 
-            val scene = Scene(loader.load())
-            stage.scene = scene
+    @FXML
+    private JFXCheckBox chkPg;
 
+    @FXML
+    private JFXCheckBox chkNC17;
 
-        } catch (e: Exception) {
+    @FXML
+    private JFXCheckBox chkSelectAll;
+	
 
+    ObservableList<MovieModel> movieModels = FXCollections.observableArrayList();
+
+    @FXML
+    private TableView<MovieModel> table;
+
+    @FXML
+    private TableColumn<MovieModel, String> colID;
+
+    @FXML
+    private TableColumn<MovieModel, String> colTitle;
+
+    @FXML
+    private TableColumn<MovieModel, String> colRating;
+
+    @FXML
+    void btnApplyClicked(ActionEvent event) {
+        List<String> Ratings = new ArrayList<>();
+        if(chkG.isSelected()){
+            Ratings.add("G");
+        }
+        if(chkPg.isSelected()){
+            Ratings.add("Pg");
+        }
+        if(chkPg13.isSelected()){
+            Ratings.add("Pg-13");
+        }
+        if(chkR.isSelected()){
+            Ratings.add("R");
+        }
+        if(chkNC17.isSelected()){
+            Ratings.add("NC-17");
         }
 
-    }
+        StringBuilder sb = new StringBuilder("Select * from movies where Rating in (");
 
+        for(int i = 0 ; i < Ratings.size(); i++){
+            sb.append(i==Ratings.size() -1 ? "'" + Ratings.get(i) + "'": "'" + Ratings.get(i) + "'" + ",");
+        }sb.append(")");
 
-    override fun initialize(location: URL, resources: ResourceBundle) {
-        try {
-            val conn = ConnectionFactory.getConnection()
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
 
             // the mysql insert statement
-            val query = " SELECT * FROM movies"
+            String query = sb.toString();
 
             // create the mysql insert preparedstatement
-            val preparedStmt = conn.prepareStatement(query)
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
             // execute the preparedstatement
-            val rs = preparedStmt.executeQuery()
-            movieModels.clear()
-            while (rs.next()) {
+            ResultSet rs = preparedStmt.executeQuery();
+            movieModels.clear();
+            while (rs.next())
+            {
 
-                val movie = MovieModel()
+                MovieModel movie = new MovieModel();
 
-                movie.title = rs.getString("Title")
-                movie.movieID = rs.getString("MovieID")
-                movie.rating = rs.getString("Rating")
+                movie.setTitle(rs.getString("Title"));
+                movie.setMovieID(rs.getString("MovieID"));
+                movie.setRating(rs.getString("Rating"));
 
 
-                movieModels.add(movie)
+                movieModels.add(movie);
             }
 
-            conn.close()
+            conn.close();
 
-        } catch (e: Exception) {
-            System.err.println("Got an exception!")
-            System.err.println(e.message)
+        } catch (Exception e)
+        {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
         }
 
-        colID!!.setCellValueFactory(PropertyValueFactory("MovieID"))
-        colTitle!!.setCellValueFactory(PropertyValueFactory("title"))
-        colRating!!.setCellValueFactory(PropertyValueFactory("Rating"))
+        colID.setCellValueFactory(new PropertyValueFactory<>("MovieID"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colRating.setCellValueFactory(new PropertyValueFactory<>("Rating"));
 
         //adding an event listener for double clicks
-        table!!.setRowFactory { tv ->
-            val row = TableRow<MovieModel>()
-            row.setOnMouseClicked { event ->
-                if (event.clickCount == 2 && !row.isEmpty) {
-                    val rowData = row.item
-                    println(rowData.title)
+        table.setRowFactory(tv -> {
+            TableRow<MovieModel> row = new TableRow<>();
+            row.setOnMouseClicked(e -> {
+                if (e.getClickCount() == 2 && (!row.isEmpty())) {
+                    MovieModel rowData = row.getItem();
+                    System.out.println(rowData.getTitle());
                 }
-            }
-            row
-        }
+            });
+            return row;
+        });
 
-        table.setItems(movieModels)
+        table.setItems(movieModels);
 
 
     }
+
+    @FXML
+    void btnHomeClicked(ActionEvent event) {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MovieApp.fxml"));
+            Stage stage = (Stage) btnHome.getScene().getWindow();
+
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+
+
+        }catch (Exception e){
+
+        }
+    }
+    @FXML
+    void chkSelectAllClicked(ActionEvent event) {
+        if(chkSelectAll.isSelected() == true)
+        {
+            chkG.setSelected(true);
+            chkPg.setSelected(true);
+            chkPg13.setSelected(true);
+            chkR.setSelected(true);
+            chkNC17.setSelected(true);
+        }else{
+            chkG.setSelected(false);
+            chkPg.setSelected(false);
+            chkPg13.setSelected(false);
+            chkR.setSelected(false);
+            chkNC17.setSelected(false);
+        }
+
+
+    }
+
+    @FXML
+    void bindCheckbox(ActionEvent event) {
+        if(chkSelectAll.isSelected() == true){
+            chkSelectAll.setSelected(false);
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
+
+            // the mysql insert statement
+            String query = " SELECT * FROM movies";
+
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            // execute the preparedstatement
+            ResultSet rs = preparedStmt.executeQuery();
+            movieModels.clear();
+            while (rs.next())
+            {
+
+                MovieModel movie = new MovieModel();
+
+                movie.setTitle(rs.getString("Title"));
+                movie.setMovieID(rs.getString("MovieID"));
+                movie.setRating(rs.getString("Rating"));
+
+
+                movieModels.add(movie);
+            }
+
+            conn.close();
+
+        } catch (Exception e)
+        {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
+        }
+
+        colID.setCellValueFactory(new PropertyValueFactory<>("MovieID"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colRating.setCellValueFactory(new PropertyValueFactory<>("Rating"));
+
+        //adding an event listener for double clicks
+        table.setRowFactory(tv -> {
+            TableRow<MovieModel> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    MovieModel rowData = row.getItem();
+                    System.out.println(rowData.getTitle());
+                }
+            });
+            return row;
+        });
+
+        table.setItems(movieModels);
+
+
+
+    }
+
+
 
 
 }
