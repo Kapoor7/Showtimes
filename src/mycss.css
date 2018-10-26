@@ -1,0 +1,16 @@
+.table-view{
+    -fx-background-color: transparent;
+
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #C0B283;
+
+}
+.table-row-cell:even{
+    -fx-background-color: #F4F4F4;
+
+}
+
+.table-row-cell:selected
+{ -fx-background-color: #2F4F4F; }

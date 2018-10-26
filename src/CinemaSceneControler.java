@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -63,6 +64,8 @@ public class CinemaSceneControler implements Initializable{
             }catch(Exception e){
 
                 System.err.print(e.getMessage());
+                showAlertWithHeaderText("Please enter a valid address.");
+                return;
             }
 
             try
@@ -79,6 +82,7 @@ public class CinemaSceneControler implements Initializable{
                 CinemaModels.clear();
                 while (rs.next())
                 {
+
                     if(getDistance(x, y, Integer.parseInt(rs.getString("addressX")), Integer.parseInt(rs.getString("addressY"))) <= Integer.parseInt(txtRadius.getText())){
                         CinemaModel cinema = new CinemaModel();
 
@@ -158,6 +162,8 @@ public class CinemaSceneControler implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+        txtRadius.setStyle("-fx-text-inner-color: #c0b283;");
+        txtAddress.setStyle("-fx-text-inner-color: #c0b283;");
         try
         {
             Connection conn = ConnectionFactory.getConnection();
@@ -219,6 +225,14 @@ public class CinemaSceneControler implements Initializable{
 
         table2.setItems(CinemaModels);
 
+    }
+
+    private void showAlertWithHeaderText(String errorMsg) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Error");
+        alert.setHeaderText("Results:");
+        alert.setContentText(errorMsg);
+        alert.showAndWait();
     }
 
 }

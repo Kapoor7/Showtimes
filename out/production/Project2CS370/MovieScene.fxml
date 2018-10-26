@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MovieSceneController">
    <children>
-      <TableView fx:id="table" layoutX="14.0" layoutY="55.0" prefHeight="399.0" prefWidth="706.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="55.0" prefHeight="399.0" prefWidth="706.0" stylesheets="@mycss.css">
         <columns>
           <TableColumn fx:id="colID" prefWidth="129.0" text="MovieID" />
           <TableColumn fx:id="colTitle" prefWidth="128.0" text="Movie Title" />
+            <TableColumn fx:id="colRating" prefWidth="128.0" text="Movie Rating" />
         </columns>
       </TableView>
       <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="14.0" layoutY="454.0" onAction="#btnHomeClicked" prefHeight="53.0" prefWidth="105.0" ripplerFill="#b90a0a" text="Home" textFill="#c0b283">
          <font>
             <Font name="Microsoft YaHei Light" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXCheckBox fx:id="chkG" layoutX="42.0" layoutY="14.0" onAction="#bindCheckbox" prefHeight="31.0" prefWidth="55.0" text="G" textFill="#fcdfdf" />
+      <JFXCheckBox fx:id="chkPg13" layoutX="169.0" layoutY="14.0" onAction="#bindCheckbox" prefHeight="31.0" prefWidth="55.0" text="Pg-13" textFill="#fcdfdf" />
+      <JFXCheckBox fx:id="chkR" layoutX="248.0" layoutY="14.0" onAction="#bindCheckbox" prefHeight="31.0" prefWidth="55.0" text="R" textFill="#fcdfdf" />
+      <JFXCheckBox fx:id="chkPg" layoutX="104.0" layoutY="14.0" onAction="#bindCheckbox" prefHeight="31.0" prefWidth="55.0" text="Pg" textFill="#fcdfdf" />
+      <JFXCheckBox fx:id="chkNC17" layoutX="312.0" layoutY="14.0" onAction="#bindCheckbox" prefHeight="31.0" prefWidth="68.0" text="NC-17" textFill="#fcdfdf" />
+      <JFXCheckBox fx:id="chkSelectAll" layoutX="397.0" layoutY="14.0" onAction="#chkSelectAllClicked" prefHeight="31.0" prefWidth="105.0" text="De/Select All" textFill="#fcdfdf" />
+      <JFXButton fx:id="btnApply" layoutX="499.0" layoutY="14.0" onAction="#btnApplyClicked" prefHeight="31.0" prefWidth="57.0" ripplerFill="#d00000" style="-fx-background-color: #DCD0C0;" text="Apply">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
