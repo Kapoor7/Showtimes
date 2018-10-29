@@ -1,4 +1,10 @@
 public class CinemaModel {
+
+    private String CinemaName;
+    private String CinemaID;
+    private int addressX;
+    private int addressY;
+
     public String getCinemaID()
     {
         return CinemaID;
@@ -29,10 +35,6 @@ public class CinemaModel {
         this.addressY = addressY;
     }
 
-    private String CinemaID;
-    private int addressX;
-    private int addressY;
-
     public String getCinemaName()
     {
         return CinemaName;
@@ -42,9 +44,6 @@ public class CinemaModel {
     {
         CinemaName = cinemaName;
     }
-
-    private  String CinemaName;
-
 
 
 }

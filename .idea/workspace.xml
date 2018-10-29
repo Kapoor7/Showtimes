@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46d06101-8beb-4f6a-ad84-4a44d024d1da" name="Default" comment="" />
+    <list default="true" id="46d06101-8beb-4f6a-ad84-4a44d024d1da" name="Default" comment="A_10/29_HK">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/CinemaModel.java" afterPath="$PROJECT_DIR$/src/CinemaModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/MovieApp.java" afterPath="$PROJECT_DIR$/src/MovieApp.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,24 +16,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MovieApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MovieApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MovieApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+            <state relative-caret-position="129">
+              <caret line="32" column="45" lean-forward="false" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
               <folding>
-                <element signature="e#1802#1803#0" expanded="true" />
-                <element signature="e#1830#1831#0" expanded="true" />
+                <element signature="e#1962#1963#0" expanded="true" />
+                <element signature="e#1990#1991#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project2CS370.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project2CS370.iml">
+      <file leaf-file-name="MovieModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MovieModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -39,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/ColorScheme.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="8" />
+              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -47,39 +51,39 @@
       </file>
       <file leaf-file-name="MovieScene.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MovieScene.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
         </entry>
       </file>
       <file leaf-file-name="CinemaModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CinemaModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
+            <state relative-caret-position="544">
+              <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
               <folding>
-                <element signature="e#63#64#0" expanded="true" />
-                <element signature="e#94#95#0" expanded="true" />
-                <element signature="e#146#147#0" expanded="true" />
-                <element signature="e#181#182#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#248#249#0" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
-                <element signature="e#337#338#0" expanded="true" />
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#404#405#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#616#617#0" expanded="true" />
-                <element signature="e#649#650#0" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
+                <element signature="e#177#178#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#260#261#0" expanded="true" />
+                <element signature="e#295#296#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#648#649#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,8 +92,8 @@
       <file leaf-file-name="MovieSceneController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MovieSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="3332">
+              <caret line="217" column="47" lean-forward="true" selection-start-line="217" selection-start-column="47" selection-end-line="217" selection-end-column="47" />
               <folding>
                 <marker date="1540487708364" expanded="true" signature="5153:5173" ph=" SELECT statement (MOVIES)" />
               </folding>
@@ -97,12 +101,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MovieApp.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MovieApp.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="11" column="187" lean-forward="false" selection-start-line="11" selection-start-column="187" selection-end-line="11" selection-end-column="187" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="221">
+              <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+              <folding>
+                <marker date="1540841145692" expanded="true" signature="54608:54632" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,24 +139,14 @@
       <file leaf-file-name="CinemaSceneControler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CinemaSceneControler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+            <state relative-caret-position="1071">
+              <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getDistance#0;class#CinemaSceneControler#0" expanded="false" />
                 <marker date="1540421797852" expanded="true" signature="2160:2181" ph=" SELECT statement (CINEMAS)" />
                 <marker date="1540421797852" expanded="true" signature="5374:5395" ph=" SELECT statement (CINEMAS)" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ConnectionFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -170,12 +179,12 @@
         <option value="$PROJECT_DIR$/src/MovieModel.java" />
         <option value="$PROJECT_DIR$/src/ConnectionFactory.java" />
         <option value="$PROJECT_DIR$/src/CinemaScene.fxml" />
-        <option value="$PROJECT_DIR$/src/CinemaModel.java" />
-        <option value="$PROJECT_DIR$/src/MovieApp.java" />
         <option value="$PROJECT_DIR$/src/MovieSceneController.kt" />
         <option value="$PROJECT_DIR$/src/CinemaSceneControler.java" />
         <option value="$PROJECT_DIR$/src/mycss.css" />
         <option value="$PROJECT_DIR$/src/MovieSceneController.java" />
+        <option value="$PROJECT_DIR$/src/CinemaModel.java" />
+        <option value="$PROJECT_DIR$/src/MovieApp.java" />
       </list>
     </option>
   </component>
@@ -200,7 +209,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,9 +233,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,24 +370,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752612" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33623692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33623692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25948405" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2670713" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -396,28 +404,237 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="A_10/29_HK" />
+    <option name="LAST_COMMIT_MESSAGE" value="A_10/29_HK" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MovieSceneController.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Project2CS370.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ColorScheme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CinemaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
+          <folding>
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <marker date="1540841145692" expanded="true" signature="54608:54632" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mycss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CinemaSceneControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getDistance#0;class#CinemaSceneControler#0" expanded="false" />
+            <marker date="1540421797852" expanded="true" signature="2160:2181" ph=" SELECT statement (CINEMAS)" />
+            <marker date="1540421797852" expanded="true" signature="5374:5395" ph=" SELECT statement (CINEMAS)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+          <folding>
+            <marker date="1540487708364" expanded="true" signature="5153:5173" ph=" SELECT statement (MOVIES)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
           <folding>
-            <element signature="e#1802#1803#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project2CS370.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ColorScheme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CinemaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
+          <folding>
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <marker date="1540841145692" expanded="true" signature="54608:54632" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mycss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CinemaSceneControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getDistance#0;class#CinemaSceneControler#0" expanded="false" />
+            <marker date="1540421797852" expanded="true" signature="2160:2181" ph=" SELECT statement (CINEMAS)" />
+            <marker date="1540421797852" expanded="true" signature="5374:5395" ph=" SELECT statement (CINEMAS)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="83" column="84" lean-forward="true" selection-start-line="83" selection-start-column="84" selection-end-line="83" selection-end-column="84" />
+          <folding>
+            <marker date="1540487708364" expanded="true" signature="5153:5173" ph=" SELECT statement (MOVIES)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+          <folding>
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -439,14 +656,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CinemaModel.java">
@@ -454,22 +671,22 @@
         <state relative-caret-position="238">
           <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
           <folding>
-            <element signature="e#63#64#0" expanded="true" />
-            <element signature="e#94#95#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -510,8 +727,8 @@
         <state relative-caret-position="850">
           <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
           <folding>
-            <element signature="e#1802#1803#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -533,14 +750,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CinemaModel.java">
@@ -548,22 +765,22 @@
         <state relative-caret-position="238">
           <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
           <folding>
-            <element signature="e#63#64#0" expanded="true" />
-            <element signature="e#94#95#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,17 +822,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieApp.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="187" lean-forward="false" selection-start-line="11" selection-start-column="187" selection-end-line="11" selection-end-column="187" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Project2CS370.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -625,56 +831,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CinemaScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CinemaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
-          <folding>
-            <element signature="e#63#64#0" expanded="true" />
-            <element signature="e#94#95#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
-          <folding>
-            <element signature="e#1802#1803#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,20 +850,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ColorScheme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="8" />
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -713,10 +876,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding>
+            <marker date="1540841145692" expanded="true" signature="54608:54632" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CinemaSceneControler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+        <state relative-caret-position="1071">
+          <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getDistance#0;class#CinemaSceneControler#0" expanded="false" />
@@ -726,21 +899,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/util/Callback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="3332">
+          <caret line="217" column="47" lean-forward="true" selection-start-line="217" selection-start-column="47" selection-end-line="217" selection-end-column="47" />
           <folding>
             <marker date="1540487708364" expanded="true" signature="5153:5173" ph=" SELECT statement (MOVIES)" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/src/MovieApp.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="136">
+          <caret line="11" column="187" lean-forward="false" selection-start-line="11" selection-start-column="187" selection-end-line="11" selection-end-column="187" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CinemaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="32" column="45" lean-forward="false" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding>
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
