@@ -41,7 +41,7 @@ public class MovieApp extends Application {
            Stage stage = (Stage) btnMovies.getScene().getWindow();
 
             Scene scene = new Scene(loader.load());
-        stage.setScene(scene);
+            stage.setScene(scene);
 
 
        }catch (Exception e){

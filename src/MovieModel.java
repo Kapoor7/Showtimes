@@ -1,3 +1,5 @@
+import java.sql.Timestamp;
+
 public class MovieModel {
 
     private String MovieID;
@@ -5,6 +7,18 @@ public class MovieModel {
     private String title;
 
     private String rating;
+
+    private Timestamp time;
+
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
+    }
+
+
 
 
     public String getMovieID()
