@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f1f7e4a-45be-418d-85d3-8e73818239db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/Project2CS370/CinemaModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2CS370/CinemaModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2CS370/MovieModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2CS370/MovieModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project2CS370/MovieSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project2CS370/MovieSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CinemaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CinemaModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieDetailsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieSceneController.java" afterDir="false" />
-    </list>
+    <list default="true" id="0f1f7e4a-45be-418d-85d3-8e73818239db" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1386" />
@@ -242,7 +232,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1435" height="772" extended-state="7" />
+    <frame x="-6" y="-6" width="1435" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979592" visible="true" weight="0.26686004" />
