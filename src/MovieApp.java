@@ -30,7 +30,7 @@ public class MovieApp extends Application {
 
 
         }catch (Exception e){
-
+            System.err.print(e.getMessage());
         }
     }
 
@@ -45,7 +45,7 @@ public class MovieApp extends Application {
 
 
        }catch (Exception e){
-
+            System.err.print(e.getMessage());
        }
     }
     @Override
@@ -59,11 +59,14 @@ public class MovieApp extends Application {
         {
             e.printStackTrace();
         }
-        primaryStage.setTitle("Project 4 by Harshad Kapoor and Tanvir Hossain");
-        primaryStage.setScene(new Scene(root, 740, 500));
-        primaryStage.setResizable(true);
-       // primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.show();
+        if(root != null)
+        {
+            primaryStage.setTitle("Project 4 by Harshad Kapoor and Tanvir Hossain");
+            primaryStage.setScene(new Scene(root, 740, 500));
+            primaryStage.setResizable(true);
+            // primaryStage.initStyle(StageStyle.TRANSPARENT);
+            primaryStage.show();
+        }
     }
 
     public static void main(String[] args)
