@@ -123,7 +123,16 @@ public class CinemaSceneControler implements Initializable{
                 row.setOnMouseClicked(e -> {
                     if (e.getClickCount() == 2 && (!row.isEmpty())) {
                         CinemaModel rowData = row.getItem();
-                        System.out.println(rowData.getCinemaName());
+                        try {
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("CinemaDetails.fxml"));
+                            Stage stage = (Stage) btnFilter.getScene().getWindow();
+                            Scene scene = new Scene(loader.load());
+                            CinemaDetailsController cdc = loader.getController();
+                            cdc.initData(rowData);
+                            stage.setScene(scene);
+                        }catch (Exception ex){
+
+                        }
                     }
                 });
                 return row;
@@ -131,7 +140,9 @@ public class CinemaSceneControler implements Initializable{
 
 
             table2.setItems(CinemaModels);
-
+            if (CinemaModels.isEmpty()){
+                showAlertWithHeaderText("No Cinemas found in specified radius. Please enter greater radius.");
+            }
 
 
         }else{
@@ -216,7 +227,16 @@ public class CinemaSceneControler implements Initializable{
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (!row.isEmpty())) {
                     CinemaModel rowData = row.getItem();
-                    System.out.println(rowData.getCinemaName());
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("CinemaDetails.fxml"));
+                        Stage stage = (Stage) btnFilter.getScene().getWindow();
+                        Scene scene = new Scene(loader.load());
+                        CinemaDetailsController cdc = loader.getController();
+                        cdc.initData(rowData);
+                        stage.setScene(scene);
+                    }catch (Exception ex){
+
+                    }
                 }
             });
             return row;

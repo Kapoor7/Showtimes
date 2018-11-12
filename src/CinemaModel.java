@@ -34,7 +34,7 @@ public class CinemaModel {
     private String CinemaID;
     private int addressX;
     private int addressY;
-
+    private  String CinemaName;
     private Timestamp time;
 
     public Timestamp getTime() {
@@ -55,7 +55,7 @@ public class CinemaModel {
         CinemaName = cinemaName;
     }
 
-    private  String CinemaName;
+
 
 
 

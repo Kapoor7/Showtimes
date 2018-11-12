@@ -3,21 +3,30 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.Optional;
+
+
 
 public class MovieApp extends Application {
+
+final String pw = "aaaa";
+
 
     @FXML
     private JFXButton btnMovies;
 
     @FXML
     private JFXButton btnCinemas;
+
+    @FXML
+    private JFXButton btnLogin;
 
     @FXML
     void btnCinemasClicked(ActionEvent event) {
@@ -47,6 +56,34 @@ public class MovieApp extends Application {
        }catch (Exception e){
             System.err.print(e.getMessage());
        }
+    }
+    @FXML
+    void btnLoginClicked(ActionEvent event) throws IOException {
+        TextInputDialog inputDialog = new TextInputDialog();
+        inputDialog.setTitle("Admin Login");
+        inputDialog.setHeaderText("Enter the password");
+        Optional<String> result = inputDialog.showAndWait();
+
+        if ( result.get().equals(pw)) {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminScene.fxml"));
+            Stage stage = (Stage) btnLogin.getScene().getWindow();
+
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Error");
+            alert.setHeaderText("Login failed!");
+            alert.setContentText("WRONG PASSWORD");
+
+            alert.showAndWait();
+        }
+
+
+
+
     }
     @Override
     public void start(Stage primaryStage)
