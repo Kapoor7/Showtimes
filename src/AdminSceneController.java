@@ -39,7 +39,7 @@ public class AdminSceneController implements Initializable {
         void btnaddMClicked (ActionEvent event){
             try{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("AddMovie.fxml"));
-                Stage stage = (Stage) btnHome.getScene().getWindow();
+                Stage stage = (Stage) addM.getScene().getWindow();
 
                 Scene scene = new Scene(loader.load());
                 AddDeleteController s = loader.getController();

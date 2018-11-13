@@ -124,7 +124,55 @@ public class AddDeleteController  {
 
 
     @FXML
-    void btnTSubmitClicked(ActionEvent event) {
+    void btnTSubmitClicked(ActionEvent event) {/*
+        String cinema = cbCinema.getValue();
+        String movie = cbMovie.getValue();
+        String session = cbSession.getValue();
+        String time = cbTime.getValue();
+        if (cinema.length()==0 || movie.length()==0 || session.length()==0 || time.length()==0){
+            lblMsg.setText("Please Enter all the Fields");
+            lblMsg.setVisible(true);
+            return;
+        }
+
+        else {
+            try {
+                Connection conn = ConnectionFactory.getConnection();
+
+                String query = "SELECT MovieId FROM cs370project4.movies where Title = movie";
+                PreparedStatement preparedStmt = conn.prepareStatement(query);
+                // execute the preparedstatement
+                ResultSet rs = preparedStmt.executeQuery();
+                String movieID = rs.getString("MovieID");
+
+                query = "SELECT CinemaID FROM cs370project4.cinemas where CinemaName = cinema";
+                preparedStmt = conn.prepareStatement(query);
+                rs = preparedStmt.executeQuery();
+                String cinemaID = rs.getString("CinemaID");
+
+                query = "insert into showtimes(CinemaID, MovieID, Session, Time) values (?, ?, ?, ?)";
+
+                PreparedStatement prp = conn.prepareStatement(query);
+
+                prp.setString(1, cinemaID);
+                prp.setString(2, movieID);
+                prp.setString(3, session);
+                prp.setString(4, time);
+
+
+                prp.execute();
+
+                conn.close();
+                lblMsg.setText(movie + " has been added at "+ cinema +" successfully!");
+                lblMsg.setVisible(true);
+
+
+            } catch (Exception e) {
+                lblMsg.setText("Failed to add! Please try again");
+                lblMsg.setVisible(true);
+            }
+
+        }*/
 
     }
 
@@ -133,8 +181,10 @@ public class AddDeleteController  {
         cbSession.getItems().add("Evening");
         cbSession.getItems().add("Midnight");
         cbTime.getItems().add("06:00");
+        cbTime.getItems().add("01:30");
+        cbTime.getItems().add("02:15");
 
-        if (cbSession.getValue().length()==9){
+      /*  if (cbSession.getValue().length()==9){
             cbTime.getItems().add("01:00");
             cbTime.getItems().add("01:30");
             cbTime.getItems().add("02:15");
