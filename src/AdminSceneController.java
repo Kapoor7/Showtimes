@@ -37,14 +37,57 @@ public class AdminSceneController implements Initializable {
 
         @FXML
         void btnaddMClicked (ActionEvent event){
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddMovie.fxml"));
+                Stage stage = (Stage) btnHome.getScene().getWindow();
+
+                Scene scene = new Scene(loader.load());
+                AddDeleteController s = loader.getController();
+                s.initAddMovie();
+                stage.setScene(scene);
+
+
+            }catch (Exception e){
+
+            }
 
         }
 
          @FXML
-        void btnAddCClicked(ActionEvent event) {}
+        void btnAddCClicked(ActionEvent event) {
+
+             try{
+                 FXMLLoader loader = new FXMLLoader(getClass().getResource("AddCinema.fxml"));
+                 Stage stage = (Stage) btnHome.getScene().getWindow();
+
+                 Scene scene = new Scene(loader.load());
+
+                 stage.setScene(scene);
+
+
+             }catch (Exception e){
+
+             }
+
+         }
 
         @FXML
-        void btnAddTimeClicked(ActionEvent event) {}
+        void btnAddTimeClicked(ActionEvent event) {
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddTime.fxml"));
+                Stage stage = (Stage) btnHome.getScene().getWindow();
+
+                Scene scene = new Scene(loader.load());
+                AddDeleteController T = loader.getController();
+                T.initTime();
+
+                stage.setScene(scene);
+
+
+            }catch (Exception e){
+
+            }
+        }
 
 
         @FXML
@@ -70,7 +113,7 @@ public class AdminSceneController implements Initializable {
 
                 }catch (Exception e){
 
-                     }
+                }
         }
 
 
