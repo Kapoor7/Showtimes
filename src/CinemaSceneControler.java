@@ -56,7 +56,10 @@ public class CinemaSceneControler implements Initializable{
         if(txtAddress.getText().length() != 0 && txtRadius.getText().length() != 0){
 
             String[] clientAddress = txtAddress.getText().split(",");
-            if (clientAddress.length > 2 ) showAlertWithHeaderText("Please enter a valid address. X, y");
+            if (clientAddress.length > 2 ) {
+                showAlertWithHeaderText("Please enter a valid address. x, y");
+                return;
+            }
 
             int x = 0; int y=0;
             try

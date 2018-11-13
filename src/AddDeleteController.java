@@ -313,6 +313,7 @@ public class AddDeleteController  {
 
 
             } catch (Exception e) {
+                e.printStackTrace();
                 lblMsg.setText(movie + " has failed to add! Please try again later.");
                 lblMsg.setVisible(true);
             }
