@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MovieDetailsController">
+   <children>
+      <TableView fx:id="table" layoutX="18.0" layoutY="30.0" prefHeight="399.0" prefWidth="706.0" stylesheets="@mycss.css">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="129.0" text="CinemaID" />
+            <TableColumn fx:id="colTitle" prefWidth="128.0" text="Cinema Title" />
+            <TableColumn fx:id="coltime" prefWidth="128.0" text="Time &amp; Date" />
+            <TableColumn fx:id="colLaction" prefWidth="129.0" text="Location" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="25.0" layoutY="449.0" onAction="#btnHomeClicked" prefHeight="53.0" prefWidth="105.0" ripplerFill="#b90a0a" text="Home" textFill="#c0b283">
+         <font>
+            <Font name="Microsoft YaHei Light" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

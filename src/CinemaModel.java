@@ -1,10 +1,6 @@
+import java.sql.Timestamp;
+
 public class CinemaModel {
-
-    private String CinemaName;
-    private String CinemaID;
-    private int addressX;
-    private int addressY;
-
     public String getCinemaID()
     {
         return CinemaID;
@@ -35,6 +31,20 @@ public class CinemaModel {
         this.addressY = addressY;
     }
 
+    private String CinemaID;
+    private int addressX;
+    private int addressY;
+
+    private Timestamp time;
+
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
+    }
+
     public String getCinemaName()
     {
         return CinemaName;
@@ -44,6 +54,9 @@ public class CinemaModel {
     {
         CinemaName = cinemaName;
     }
+
+    private  String CinemaName;
+
 
 
 }
