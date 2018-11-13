@@ -185,12 +185,18 @@ public class MovieSceneController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+        chkG.setSelected(true);
+        chkPg.setSelected(true);
+        chkPg13.setSelected(true);
+        chkR.setSelected(true);
+        chkNC17.setSelected(true);
+        chkSelectAll.setSelected(true);
         try
         {
             Connection conn = ConnectionFactory.getConnection();
 
             // the mysql insert statement
-            String query = " SELECT * FROM movies";
+            String query = " SELECT * FROM movies"; 
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
