@@ -25,15 +25,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXTextField fx:id="txtRadius" labelFloat="true" layoutX="528.0" layoutY="26.0" promptText="Enter radius" unFocusColor="#f23737">
+      <JFXTextField fx:id="txtRadius" focusColor="#a3a840" labelFloat="true" layoutX="488.0" layoutY="25.0" promptText="Enter radius" style="-fx-background-color: white;" unFocusColor="#f23737">
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="352.0" layoutY="27.0" promptText="Enter address x,y" unFocusColor="#f23737">
+      <JFXTextField fx:id="txtAddress" focusColor="#9ea840" labelFloat="true" layoutX="290.0" layoutY="26.0" promptText="Enter address x,y" style="-fx-background-color: white;" unFocusColor="#f23737">
          <font>
             <Font name="Microsoft YaHei Light" size="14.0" />
          </font></JFXTextField>
-      <JFXButton fx:id="btnFilter" layoutX="685.0" layoutY="27.0" onAction="#btnFilterClicked" prefHeight="25.0" prefWidth="57.0" text="Filter" textFill="#c0b283">
+      <JFXButton fx:id="btnFilter" layoutX="670.0" layoutY="25.0" onAction="#btnFilterClicked" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #101a49;" text="Filter" textFill="#fcfcfb">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

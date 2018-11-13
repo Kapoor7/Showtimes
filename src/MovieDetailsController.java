@@ -32,6 +32,7 @@ public class MovieDetailsController {
 
     @FXML
     private  TableColumn<CinemaModel, String> coltime;
+   // private  TableColumn<CinemaModel, Timestamp> coltime;
 
     @FXML
     private TableColumn<CinemaModel, String> colLaction; // It means location
@@ -87,9 +88,10 @@ public class MovieDetailsController {
 
 
         colID.setCellValueFactory(new PropertyValueFactory<>("CinemaID"));
-        colTitle.setCellValueFactory(new PropertyValueFactory<>("CinemaName"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("CinemaName"));\
         //coltime.setCellValueFactory(new PropertyValueFactory<>("time"));
         coltime.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getTime().toString().substring(11,16) ));
+
         colLaction.setCellValueFactory(c -> {
             if(c.getValue() != null){
                 return new SimpleStringProperty(c.getValue().getAddressX() + "," + c.getValue().getAddressY());
