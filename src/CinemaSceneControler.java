@@ -115,7 +115,7 @@ public class CinemaSceneControler implements Initializable{
             colName.setCellValueFactory(new PropertyValueFactory<>("CinemaName"));
 
             //concatenating x and y into one field
-            colAddress.setCellValueFactory(c -> {
+            colAddress.setCellValueFactory( c -> {
                 if (c.getValue() != null) {
                     return new SimpleStringProperty(c.getValue().getAddressX() + "," + c.getValue().getAddressY());
                 } else {
@@ -146,6 +146,7 @@ public class CinemaSceneControler implements Initializable{
 
 
             table2.setItems(CinemaModels);
+
             if (CinemaModels.isEmpty()){
                 showAlertWithHeaderText("No Cinemas found in specified radius. Please enter greater radius.");
             }

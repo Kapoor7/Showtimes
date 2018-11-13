@@ -228,6 +228,7 @@ public class MovieSceneController implements Initializable{
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (!row.isEmpty())) {
                     MovieModel rowData = row.getItem();
+                    System.out.println(rowData.getTitle());
 
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("MovieDetails.fxml"));
