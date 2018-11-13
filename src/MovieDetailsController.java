@@ -88,7 +88,7 @@ public class MovieDetailsController {
 
 
         colID.setCellValueFactory(new PropertyValueFactory<>("CinemaID"));
-        colTitle.setCellValueFactory(new PropertyValueFactory<>("CinemaName"));\
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("CinemaName"));
         //coltime.setCellValueFactory(new PropertyValueFactory<>("time"));
         coltime.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getTime().toString().substring(11,16) ));
 
