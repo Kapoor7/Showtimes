@@ -14,3 +14,7 @@
 
 .table-row-cell:selected
 { -fx-background-color: #2F4F4F; }
+
+.table-row-cell {
+    -fx-cell-size: 48px;
+}
