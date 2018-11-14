@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -62,6 +63,14 @@ public class MovieSceneController implements Initializable{
     @FXML
     private TableColumn<MovieModel, String> colRating;
 
+    private void showAlertWithHeaderText(String errorMsg) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Results:");
+        alert.setContentText(errorMsg);
+        alert.showAndWait();
+    }
+
     @FXML
     void btnApplyClicked(ActionEvent event) {
         List<String> Ratings = new ArrayList<>();
@@ -79,6 +88,10 @@ public class MovieSceneController implements Initializable{
         }
         if(chkNC17.isSelected()){
             Ratings.add("NC-17");
+        }
+        if(Ratings.size() == 0){
+            showAlertWithHeaderText("Please choose a rating.");
+            return;
         }
 
         StringBuilder sb = new StringBuilder("Select * from movies where Rating in (");
@@ -185,6 +198,12 @@ public class MovieSceneController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+        chkG.setSelected(true);
+        chkPg.setSelected(true);
+        chkPg13.setSelected(true);
+        chkR.setSelected(true);
+        chkNC17.setSelected(true);
+        chkSelectAll.setSelected(true);
         try
         {
             Connection conn = ConnectionFactory.getConnection();
