@@ -186,8 +186,15 @@ public class AddDeleteController  {
 
     public void initTime(){
 
+               // cbTime.getItems().add("Please choose a session first");
+                cbTime.setDisable(true);
+
         cbSession.setOnAction(e -> {
+            if(cbSession.getValue() == null){
+                cbTime.setDisable(true);
+            }
             if(cbSession.getValue() == "Afternoon"){
+                cbTime.setDisable(false);
                 cbTime.getItems().clear();
                 cbTime.getItems().add("01:00");
                 cbTime.getItems().add("01:30");
@@ -197,6 +204,7 @@ public class AddDeleteController  {
                 cbTime.getItems().add("04:45");
             }
             if(cbSession.getValue() == "Evening"){
+                cbTime.setDisable(false);
                 cbTime.getItems().clear();
                 cbTime.getItems().add("05:15");
                 cbTime.getItems().add("05:40");
@@ -207,6 +215,7 @@ public class AddDeleteController  {
                 cbTime.getItems().add("08:40");
             }
             if(cbSession.getValue() == "Midnight"){
+                cbTime.setDisable(false);
                 cbTime.getItems().clear();
                 cbTime.getItems().add("10:00");
                 cbTime.getItems().add("11.30");
