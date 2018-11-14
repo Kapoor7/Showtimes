@@ -16,6 +16,8 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -124,7 +126,7 @@ public class AddDeleteController  {
 
 
     @FXML
-    void btnTSubmitClicked(ActionEvent event) {/*
+    void btnTSubmitClicked(ActionEvent event) {
         String cinema = cbCinema.getValue();
         String movie = cbMovie.getValue();
         String session = cbSession.getValue();
@@ -139,23 +141,29 @@ public class AddDeleteController  {
             try {
                 Connection conn = ConnectionFactory.getConnection();
 
-                String query = "SELECT MovieId FROM cs370project4.movies where Title = movie";
+                String query = "SELECT MovieId FROM movies where Title = ?";
                 PreparedStatement preparedStmt = conn.prepareStatement(query);
                 // execute the preparedstatement
+                preparedStmt.setString(1, movie);
                 ResultSet rs = preparedStmt.executeQuery();
-                String movieID = rs.getString("MovieID");
+                rs.next();
+                int movieID = rs.getInt("MovieID");
 
-                query = "SELECT CinemaID FROM cs370project4.cinemas where CinemaName = cinema";
+                query = "SELECT CinemaID FROM cinemas where CinemaName = ?";
                 preparedStmt = conn.prepareStatement(query);
+                preparedStmt.setString(1, cinema);
                 rs = preparedStmt.executeQuery();
-                String cinemaID = rs.getString("CinemaID");
+                rs.next();
+                int cinemaID = rs.getInt("CinemaID");
 
-                query = "insert into showtimes(CinemaID, MovieID, Session, Time) values (?, ?, ?, ?)";
+                query = "insert into showtime(CinemaID, MovieID, Session, Time) values (?, ?, ?, ?)";
 
                 PreparedStatement prp = conn.prepareStatement(query);
 
-                prp.setString(1, cinemaID);
-                prp.setString(2, movieID);
+                time = LocalDateTime.now().toLocalDate()+" "+time+":00";
+
+                prp.setInt(1, cinemaID);
+                prp.setInt(2, movieID);
                 prp.setString(3, session);
                 prp.setString(4, time);
 
@@ -172,17 +180,54 @@ public class AddDeleteController  {
                 lblMsg.setVisible(true);
             }
 
-        }*/
+        }
 
     }
 
     public void initTime(){
+
+        cbSession.setOnAction(e -> {
+            if(cbSession.getValue() == "Afternoon"){
+                cbTime.getItems().clear();
+                cbTime.getItems().add("01:00");
+                cbTime.getItems().add("01:30");
+                cbTime.getItems().add("02:15");
+                cbTime.getItems().add("02:40");
+                cbTime.getItems().add("03:20");
+                cbTime.getItems().add("04:45");
+            }
+            if(cbSession.getValue() == "Evening"){
+                cbTime.getItems().clear();
+                cbTime.getItems().add("05:15");
+                cbTime.getItems().add("05:40");
+                cbTime.getItems().add("06:10");
+                cbTime.getItems().add("06:55");
+                cbTime.getItems().add("07:20");
+                cbTime.getItems().add("08:00");
+                cbTime.getItems().add("08:40");
+            }
+            if(cbSession.getValue() == "Midnight"){
+                cbTime.getItems().clear();
+                cbTime.getItems().add("10:00");
+                cbTime.getItems().add("11.30");
+                cbTime.getItems().add("12:00");
+            }
+
+
+
+        });
+
         cbSession.getItems().add("Afternoon");
         cbSession.getItems().add("Evening");
         cbSession.getItems().add("Midnight");
-        cbTime.getItems().add("06:00");
-        cbTime.getItems().add("01:30");
-        cbTime.getItems().add("02:15");
+
+        /*cbTime.getItems().add("02:15");
+        cbTime.getItems().add("03:20");
+        cbTime.getItems().add("04:45");
+        cbTime.getItems().add("08:00");
+        cbTime.getItems().add("08:40");
+        cbTime.getItems().add("10:00");
+        cbTime.getItems().add("11.30");
 
       /*  if (cbSession.getValue().length()==9){
             cbTime.getItems().add("01:00");
@@ -319,16 +364,19 @@ public class AddDeleteController  {
             }
 
             txtMovie.setText("");
+            cbRating.setValue(null);
 
         }
     }
 
     public void initAddMovie(){
         cbRating.getItems().add("G");
+        cbRating.getItems().add("PG");
         cbRating.getItems().add("Pg-13");
         cbRating.getItems().add("R");
         cbRating.getItems().add("NC-17");
         cbRating.getItems().add("NR");
+
     }
 
 

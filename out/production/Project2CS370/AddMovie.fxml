@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddDeleteController">
+   <children>
+      <Label layoutX="269.0" layoutY="52.0" prefHeight="52.0" prefWidth="174.0" style="-fx-background-color: #f7e7ce;" text="      Add Movies " textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnBack" layoutX="42.0" layoutY="27.0" onAction="#btnBackClicked" prefHeight="34.0" prefWidth="52.0" style="-fx-background-color: #0c1394;" text="Back" textFill="#ececf2">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtMovie" layoutX="236.0" layoutY="178.0" onKeyPressed="#lblMessageChange" prefHeight="42.0" prefWidth="242.0" promptText="Please Enter The Movie Tiltle">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Button fx:id="btnSubmit" layoutX="315.0" layoutY="368.0" mnemonicParsing="false" onAction="#btnSubmitClicked" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #002147;" text="Submit" textFill="#f0eded">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <JFXComboBox fx:id="cbRating" layoutX="236.0" layoutY="277.0" promptText="Choose a Rating" />
+      <Label fx:id="lblMsg" layoutX="284.0" layoutY="327.0" textFill="#af3131" visible="false" />
+   </children>
+</AnchorPane>
