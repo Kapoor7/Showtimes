@@ -39,6 +39,23 @@ public class MovieDetailsController {
 
     @FXML
     private  String name;
+
+    @FXML
+    private JFXButton btnBack;
+
+    @FXML
+    void btnBackClicked(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MovieScene.fxml"));
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        }catch (Exception e){
+
+        }
+    }
+
     @FXML
     private JFXButton btnHome;
 
