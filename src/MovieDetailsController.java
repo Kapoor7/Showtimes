@@ -98,7 +98,12 @@ public class MovieDetailsController {
                 ResultSet rs2 = preparedStmt2.executeQuery();
                 StringBuilder sb = new StringBuilder("");
                 while(rs2.next()){
-                    sb.append(rs2.getTimestamp("Time").toString().substring(11,16) + " ");
+                    if(rs2.getTimestamp("Time").toString().charAt(11) == '0'){
+                        sb.append(rs2.getTimestamp("Time").toString().substring(12,16) + " ");
+                    }else{
+                        sb.append(rs2.getTimestamp("Time").toString().substring(11,16) + " ");
+                    }
+
                 }
                 CinemaModel cinema = new CinemaModel();
 

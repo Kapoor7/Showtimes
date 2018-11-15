@@ -97,7 +97,7 @@ public class CinemaDetailsController {
             while (rs.next())
             {
                 int movieID = rs.getInt("MovieID");
-                String query2 = "SELECT * FROM showtime s inner join movies m on s.movieid = m.movieid where m.movieid = ? and s.cinemaID = ?";
+                String query2 = "SELECT * FROM showtime s inner join movies m on s.movieid = m.movieid where m.movieid = ? and s.cinemaID = ? order by time";
                 PreparedStatement preparedStmt2 = conn.prepareStatement(query2);
                 preparedStmt2.setInt(1, movieID );
                 preparedStmt2.setString(2, cinema.getCinemaID());
@@ -106,7 +106,11 @@ public class CinemaDetailsController {
 
                 StringBuilder sb = new StringBuilder("");
                 while(rs2.next()){
-                    sb.append(rs2.getTimestamp("Time").toString().substring(11,16) + " ");
+                    if(rs2.getTimestamp("Time").toString().charAt(11) == '0'){
+                        sb.append(rs2.getTimestamp("Time").toString().substring(12,16) + " ");
+                    }else{
+                        sb.append(rs2.getTimestamp("Time").toString().substring(11,16) + " ");
+                    }
                 }
 
                 MovieModel movie = new MovieModel();
