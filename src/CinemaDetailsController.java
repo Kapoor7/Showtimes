@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -21,6 +22,9 @@ public class CinemaDetailsController {
     private String name;
 
     @FXML
+    private Label lblPlaying;
+
+    @FXML
     private TableView<MovieModel> table;
 
     @FXML
@@ -30,13 +34,31 @@ public class CinemaDetailsController {
     private TableColumn<MovieModel, String> colTitle;
 
     @FXML
-    private TableColumn<MovieModel, Timestamp> coltime;
+    private TableColumn<MovieModel, String> coltime;
 
     @FXML
     private TableColumn<MovieModel, String> colRating;
 
     @FXML
     private JFXButton btnHome;
+
+    @FXML
+    private JFXButton btnBack;
+
+
+
+    @FXML
+    void btnBackClicked(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CinemaScene.fxml"));
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        }catch (Exception e){
+
+        }
+    }
 
     @FXML
     void btnHomeClicked(ActionEvent event) {
@@ -57,14 +79,14 @@ public class CinemaDetailsController {
 
     public void initData(CinemaModel cinema){
         name = cinema.getCinemaName();
-
+        lblPlaying.setText(lblPlaying.getText() + name);
         try
         {
             Connection conn = ConnectionFactory.getConnection();
 
             // the mysql insert statement
             String query = " SELECT * FROM showtime s inner join movies m on s.movieid = m.movieid \n" +
-                    "where cinemaid = " +  cinema.getCinemaID() ;
+                    "where cinemaid = " +  cinema.getCinemaID() + " group by M.MovieID";
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
@@ -74,10 +96,23 @@ public class CinemaDetailsController {
             MovieModels.clear();
             while (rs.next())
             {
+                int movieID = rs.getInt("MovieID");
+                String query2 = "SELECT * FROM showtime s inner join movies m on s.movieid = m.movieid where m.movieid = ? and s.cinemaID = ?";
+                PreparedStatement preparedStmt2 = conn.prepareStatement(query2);
+                preparedStmt2.setInt(1, movieID );
+                preparedStmt2.setString(2, cinema.getCinemaID());
+
+                ResultSet rs2 = preparedStmt2.executeQuery();
+
+                StringBuilder sb = new StringBuilder("");
+                while(rs2.next()){
+                    sb.append(rs2.getTimestamp("Time").toString().substring(11,16) + " ");
+                }
 
                 MovieModel movie = new MovieModel();
 
-                movie.setTime(rs.getTimestamp("time"));
+                movie.setShowTimes(sb.toString());
+                //movie.setTime(rs.getTimestamp("time"));
                 movie.setTitle(rs.getString("Title"));
                 movie.setRating(rs.getString("Rating"));
                 movie.setMovieID(rs.getString("MovieID"));
@@ -99,7 +134,9 @@ public class CinemaDetailsController {
 
         colID.setCellValueFactory(new PropertyValueFactory<>("MovieID"));
         colTitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
-        coltime.setCellValueFactory(new PropertyValueFactory<>("time"));
+        //coltime.setCellValueFactory(new PropertyValueFactory<>("time"));
+       // coltime.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getTime().toString().substring(11,16) ));
+        coltime.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getShowTimes() ));
         colRating.setCellValueFactory(new PropertyValueFactory<>("Rating"));
 
 

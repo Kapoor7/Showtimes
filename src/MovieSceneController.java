@@ -141,9 +141,18 @@ public class MovieSceneController implements Initializable{
         table.setRowFactory(tv -> {
             TableRow<MovieModel> row = new TableRow<>();
             row.setOnMouseClicked(e -> {
-                if (e.getClickCount() == 2 && (!row.isEmpty())) {
-                    MovieModel rowData = row.getItem();
-                    System.out.println(rowData.getTitle());
+                MovieModel rowData = row.getItem();
+                //System.out.println(rowData.getTitle());
+
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("MovieDetails.fxml"));
+                    Stage stage = (Stage) btnApply.getScene().getWindow();
+                    Scene scene = new Scene(loader.load());
+                    MovieDetailsController mdc = loader.getController();
+                    mdc.initData(rowData);
+                    stage.setScene(scene);
+                }catch (Exception er){
+
                 }
             });
             return row;
@@ -247,7 +256,7 @@ public class MovieSceneController implements Initializable{
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (!row.isEmpty())) {
                     MovieModel rowData = row.getItem();
-                    System.out.println(rowData.getTitle());
+                    //System.out.println(rowData.getTitle());
 
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("MovieDetails.fxml"));

@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,11 +10,14 @@
 
 <AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MovieDetailsController">
    <children>
-      <TableView fx:id="table" layoutX="18.0" layoutY="30.0" prefHeight="399.0" prefWidth="706.0" stylesheets="@mycss.css">
+      <TableView fx:id="table" layoutX="14.0" layoutY="55.0" prefHeight="399.0" prefWidth="706.0" stylesheets="@mycss.css">
+         <placeholder>
+            <Label text="No Cinemas Currently Playing This Movie" />
+         </placeholder>
          <columns>
             <TableColumn fx:id="colID" prefWidth="129.0" text="CinemaID" />
-            <TableColumn fx:id="colTitle" prefWidth="128.0" text="Cinema Title" />
-            <TableColumn fx:id="coltime" prefWidth="128.0" text="Time &amp; Date" />
+            <TableColumn fx:id="colTitle" prefWidth="128.0" text="Cinema" />
+            <TableColumn fx:id="coltime" prefWidth="128.0" text="Time" />
             <TableColumn fx:id="colLaction" prefWidth="129.0" text="Location" />
          </columns>
       </TableView>
@@ -33,5 +37,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label fx:id="lblPlaying" alignment="CENTER" layoutX="100.0" prefHeight="53.0" prefWidth="535.0" text="Cinemas Currently Playing: " textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Myanmar Text" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

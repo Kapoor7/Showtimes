@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.InputMethodEvent;
@@ -21,7 +22,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 
-public class AddDeleteController  {
+public class AddDeleteController {
 
     @FXML
     private Label lblMsg;
@@ -55,52 +56,60 @@ public class AddDeleteController  {
     private JFXTextField txtY;
 
 
-
     @FXML
-    void btnCSubmitClicked(ActionEvent event) {
-        String cinema = txtCinema.getText();
-        if (cinema.length()==0 || txtX.getText().length()==0 || txtY.getText().length()==0){
+    void btnCSubmitClicked(ActionEvent event)
+    {
+        String cinema = txtCinema.getText().trim();
+        if (cinema.length() == 0 || txtX.getText().length() == 0 || txtY.getText().length() == 0)
+        {
             lblMsg.setText("Please Enter all the Fields");
             lblMsg.setVisible(true);
             return;
         }
         int x = Integer.parseInt(txtX.getText());
         int y = Integer.parseInt(txtY.getText());
-        if (x<0 || x >100 || y<0 || y >100){
+        if (x < 0 || x > 100 || y < 0 || y > 100)
+        {
             lblMsg.setText("Please Enter address in the range of [0,100]");
+            lblMsg.setVisible(true);
+            return;
+        }
+        if (ConnectionFactory.cinemaExistsAlready(cinema, x, y))
+        {
+            showAlertWithHeaderText("Cinema already exists.");
+            return;
+        }
+
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
+
+            String query = "insert into cinemas(CinemaName, addressX, addressY) values (?, ?, ?)";
+
+            PreparedStatement prp = conn.prepareStatement(query);
+
+            prp.setString(1, cinema);
+            prp.setString(2, Integer.toString(x));
+            prp.setString(3, Integer.toString(y));
+
+
+            prp.execute();
+
+            conn.close();
+            lblMsg.setText(cinema + " has been added successfully!");
+            lblMsg.setVisible(true);
+
+
+        } catch (Exception e)
+        {
+            lblMsg.setText(cinema + " has failed to add! Please try again");
             lblMsg.setVisible(true);
         }
 
-        else {
-            try {
-                Connection conn = ConnectionFactory.getConnection();
+        txtCinema.setText("");
+        txtY.setText("");
+        txtX.setText("");
 
-                String query = "insert into cinemas(CinemaName, addressX, addressY) values (?, ?, ?)";
-
-                PreparedStatement prp = conn.prepareStatement(query);
-
-                prp.setString(1, cinema);
-                prp.setString(2, Integer.toString(x));
-                prp.setString(3, Integer.toString(y));
-
-
-                prp.execute();
-
-                conn.close();
-                lblMsg.setText(cinema + " has been added successfully!");
-                lblMsg.setVisible(true);
-
-
-            } catch (Exception e) {
-                lblMsg.setText(cinema + " has failed to add! Please try again");
-                lblMsg.setVisible(true);
-            }
-
-            txtCinema.setText("");
-            txtY.setText("");
-            txtX.setText("");
-
-        }
 
     }
 
@@ -126,19 +135,24 @@ public class AddDeleteController  {
 
 
     @FXML
-    void btnTSubmitClicked(ActionEvent event) {
+    void btnTSubmitClicked(ActionEvent event)
+    {
         String cinema = cbCinema.getValue();
         String movie = cbMovie.getValue();
         String session = cbSession.getValue();
         String time = cbTime.getValue();
-        if (cinema.length()==0 || movie.length()==0 || session.length()==0 || time.length()==0){
+        if (cinema==null || movie == null || session== null || time == null)
+        {
             lblMsg.setText("Please Enter all the Fields");
             lblMsg.setVisible(true);
             return;
         }
-
-        else {
-            try {
+        if(ConnectionFactory.showTimeExistsAlready()){
+            //TODO: add the parameters in function and call.
+            //If it is true, then alert box.
+        }
+            try
+            {
                 Connection conn = ConnectionFactory.getConnection();
 
                 String query = "SELECT MovieId FROM movies where Title = ?";
@@ -160,7 +174,7 @@ public class AddDeleteController  {
 
                 PreparedStatement prp = conn.prepareStatement(query);
 
-                time = LocalDateTime.now().toLocalDate()+" "+time+":00";
+                time = LocalDateTime.now().toLocalDate() + " " + time + ":00";
 
                 prp.setInt(1, cinemaID);
                 prp.setInt(2, movieID);
@@ -171,29 +185,42 @@ public class AddDeleteController  {
                 prp.execute();
 
                 conn.close();
-                lblMsg.setText(movie + " has been added at "+ cinema +" successfully!");
+                lblMsg.setText(movie + " has been added at " + cinema + " successfully!");
                 lblMsg.setVisible(true);
 
 
-            } catch (Exception e) {
+            } catch (Exception e)
+            {
                 lblMsg.setText("Failed to add! Please try again");
                 lblMsg.setVisible(true);
             }
 
-        }
+
 
     }
 
-    public void initTime(){
+    public void initTime()
+    {
 
-               // cbTime.getItems().add("Please choose a session first");
-                cbTime.setDisable(true);
-
+        // cbTime.getItems().add("Please choose a session first");
+        cbTime.setDisable(true);
+        cbMovie.setOnAction(e->{
+            lblMessageChange();
+        });
+        cbCinema.setOnAction(e->{
+            lblMessageChange();
+        });
+        cbTime.setOnAction(e->{
+            lblMessageChange();
+        });
         cbSession.setOnAction(e -> {
-            if(cbSession.getValue() == null){
+            lblMessageChange();
+            if (cbSession.getValue() == null)
+            {
                 cbTime.setDisable(true);
             }
-            if(cbSession.getValue() == "Afternoon"){
+            if (cbSession.getValue() == "Afternoon")
+            {
                 cbTime.setDisable(false);
                 cbTime.getItems().clear();
                 cbTime.getItems().add("01:00");
@@ -203,7 +230,8 @@ public class AddDeleteController  {
                 cbTime.getItems().add("03:20");
                 cbTime.getItems().add("04:45");
             }
-            if(cbSession.getValue() == "Evening"){
+            if (cbSession.getValue() == "Evening")
+            {
                 cbTime.setDisable(false);
                 cbTime.getItems().clear();
                 cbTime.getItems().add("05:15");
@@ -214,7 +242,8 @@ public class AddDeleteController  {
                 cbTime.getItems().add("08:00");
                 cbTime.getItems().add("08:40");
             }
-            if(cbSession.getValue() == "Midnight"){
+            if (cbSession.getValue() == "Late Night")
+            {
                 cbTime.setDisable(false);
                 cbTime.getItems().clear();
                 cbTime.getItems().add("10:00");
@@ -223,12 +252,11 @@ public class AddDeleteController  {
             }
 
 
-
         });
 
         cbSession.getItems().add("Afternoon");
         cbSession.getItems().add("Evening");
-        cbSession.getItems().add("Midnight");
+        cbSession.getItems().add("Late Night");
 
         /*cbTime.getItems().add("02:15");
         cbTime.getItems().add("03:20");
@@ -320,72 +348,101 @@ public class AddDeleteController  {
     //Add Time Finishes
 
     @FXML
-    void btnBackClicked(ActionEvent event) {
+    void btnBackClicked(ActionEvent event)
+    {
 
-        try{
+        try
+        {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminScene.fxml"));
             Stage stage = (Stage) btnBack.getScene().getWindow();
 
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
 
-        }catch (Exception e){
+        } catch (Exception e)
+        {
 
         }
 
     }
 
     @FXML
-    void lblMessageChange(KeyEvent event) {
+    void lblMessageChange(KeyEvent event)
+    {
         lblMsg.setVisible(false);
     }
 
-    @FXML
-    void btnSubmitClicked(ActionEvent event) {
-        String movie = txtMovie.getText();
-        String rating = cbRating.getValue();
-        if(movie.length() == 0 || rating == null) {
-            lblMsg.setText("Please Enter Both Fields");
-            lblMsg.setVisible(true);
-        }
-        else {
-            try {
-                Connection conn = ConnectionFactory.getConnection();
-
-                String query = "insert into movies(Title, Rating) values (?, ?)";
-
-                PreparedStatement prp = conn.prepareStatement(query);
-
-                prp.setString(1, movie);
-                prp.setString(2, cbRating.getValue());
-
-                prp.execute();
-
-                conn.close();
-                lblMsg.setText(movie + " has been added successfully!");
-                lblMsg.setVisible(true);
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                lblMsg.setText(movie + " has failed to add! Please try again later.");
-                lblMsg.setVisible(true);
-            }
-
-            txtMovie.setText("");
-            cbRating.setValue(null);
-
-        }
+    void lblMessageChange() {
+        lblMsg.setVisible(false);
     }
 
-    public void initAddMovie(){
+
+    @FXML
+    void btnSubmitClicked(ActionEvent event)
+    {
+        String movie = txtMovie.getText().trim();
+        String rating = cbRating.getValue();
+        if (movie.length() == 0 || rating == null)
+        {
+            lblMsg.setText("Please Enter Both Fields");
+            lblMsg.setVisible(true);
+            return;
+        }
+        if (ConnectionFactory.movieExistsAlready(movie))
+        {
+            showAlertWithHeaderText("Movie already exists.");
+            return;
+        }
+
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
+
+            String query = "insert into movies(Title, Rating) values (?, ?)";
+
+            PreparedStatement prp = conn.prepareStatement(query);
+
+            prp.setString(1, movie);
+            prp.setString(2, cbRating.getValue());
+
+            prp.execute();
+
+            conn.close();
+            lblMsg.setText(movie + " has been added successfully!");
+            lblMsg.setVisible(true);
+
+
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+            lblMsg.setText(movie + " has failed to add! Please try again later.");
+            lblMsg.setVisible(true);
+        }
+
+        txtMovie.setText("");
+        cbRating.setValue(null);
+
+
+    }
+
+    public void initAddMovie()
+    {
         cbRating.getItems().add("G");
         cbRating.getItems().add("PG");
-        cbRating.getItems().add("Pg-13");
+        cbRating.getItems().add("PG-13");
         cbRating.getItems().add("R");
         cbRating.getItems().add("NC-17");
         cbRating.getItems().add("NR");
 
+    }
+
+    private void showAlertWithHeaderText(String errorMsg)
+    {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Error");
+        alert.setHeaderText("Results:");
+        alert.setContentText(errorMsg);
+        alert.showAndWait();
     }
 
 

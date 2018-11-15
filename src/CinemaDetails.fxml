@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,11 +10,14 @@
 
 <AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CinemaDetailsController">
    <children>
-      <TableView fx:id="table" layoutX="18.0" layoutY="30.0" prefHeight="399.0" prefWidth="706.0" stylesheets="@mycss.css">
+      <TableView fx:id="table" layoutX="6.0" layoutY="66.0" prefHeight="387.0" prefWidth="729.0" stylesheets="@mycss.css">
+         <placeholder>
+            <Label text="No Movies Playing At This Cinema" />
+         </placeholder>
          <columns>
             <TableColumn fx:id="colID" prefWidth="129.0" text="MovieID" />
-            <TableColumn fx:id="colTitle" prefWidth="128.0" text="Movie Title" />
-            <TableColumn fx:id="coltime" prefWidth="128.0" text="Time &amp; Date" />
+            <TableColumn fx:id="colTitle" prefWidth="128.0" text="Title" />
+            <TableColumn fx:id="coltime" prefWidth="128.0" text="Time" />
             <TableColumn fx:id="colRating" prefWidth="129.0" text="Rating " />
          </columns>
       </TableView>
@@ -25,5 +29,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="540.0" layoutY="449.0" onAction="#btnBackClicked" prefHeight="53.0" prefWidth="202.0" ripplerFill="#b90a0a" text="Go Back" textFill="#c0b283">
+         <font>
+            <Font name="Microsoft YaHei Light" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label fx:id="lblPlaying" alignment="CENTER" layoutX="103.0" layoutY="14.0" prefHeight="53.0" prefWidth="535.0" text="Movies Currently Playing at: " textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Myanmar Text" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

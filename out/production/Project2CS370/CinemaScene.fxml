@@ -13,8 +13,8 @@
       <TableView fx:id="table2" layoutX="6.0" layoutY="66.0" prefHeight="387.0" prefWidth="729.0" stylesheets="@mycss.css">
         <columns>
           <TableColumn fx:id="colID" prefWidth="125.0" text="CinemaID" />
-          <TableColumn fx:id="colName" prefWidth="160.0" text="Cenema Name" />
-            <TableColumn fx:id="colAddress" prefWidth="160.0" text="Address" />
+          <TableColumn fx:id="colName" prefWidth="160.0" text="Cinema" />
+            <TableColumn fx:id="colAddress" prefWidth="160.0" text="Location" />
         </columns>
       </TableView>
       <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="14.0" layoutY="453.0" onAction="#btnHomeClicked" prefHeight="53.0" prefWidth="105.0" ripplerFill="#b90a0a" text="Home" textFill="#c0b283">
@@ -25,15 +25,23 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXTextField fx:id="txtRadius" labelFloat="true" layoutX="528.0" layoutY="26.0" promptText="Enter radius" unFocusColor="#f23737">
+      <JFXTextField fx:id="txtRadius" focusColor="WHITE" labelFloat="true" layoutX="488.0" layoutY="25.0" promptText="Enter radius" style="-fx-background-color: white;" unFocusColor="#f23737">
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="352.0" layoutY="27.0" promptText="Enter address x,y" unFocusColor="#f23737">
+      <JFXTextField fx:id="txtAddress" focusColor="WHITE" labelFloat="true" layoutX="290.0" layoutY="26.0" promptText="Enter address x,y" style="-fx-background-color: white;" unFocusColor="#f23737">
          <font>
             <Font name="Microsoft YaHei Light" size="14.0" />
          </font></JFXTextField>
-      <JFXButton fx:id="btnFilter" layoutX="685.0" layoutY="27.0" onAction="#btnFilterClicked" prefHeight="25.0" prefWidth="57.0" text="Filter" textFill="#c0b283">
+      <JFXButton fx:id="btnFilter" layoutX="670.0" layoutY="25.0" onAction="#btnFilterClicked" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #101a49;" text="Filter" textFill="#fcfcfb">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Microsoft YaHei Light" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnReset" layoutX="212.0" layoutY="26.0" onAction="#btnResetClicked" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #101a49;" text="Reset" textFill="#fcfcfb" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
