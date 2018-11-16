@@ -176,6 +176,7 @@ public class AddDeleteController {
         }
         if(ConnectionFactory.showTimeExistsAlready(movie, cinema, Timestamp.valueOf(LocalDateTime.now().toLocalDate().toString() + " " + time + ":00"))){
             showAlertWithHeaderText("Showtime already exist");
+            return;
         }
             try
             {
