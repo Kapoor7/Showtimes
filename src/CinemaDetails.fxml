@@ -15,10 +15,10 @@
             <Label text="No Movies Playing At This Cinema" />
          </placeholder>
          <columns>
-            <TableColumn fx:id="colID" prefWidth="129.0" text="MovieID" />
-            <TableColumn fx:id="colTitle" prefWidth="128.0" text="Title" />
-            <TableColumn fx:id="coltime" prefWidth="128.0" text="Time" />
-            <TableColumn fx:id="colRating" prefWidth="129.0" text="Rating " />
+            <TableColumn fx:id="colID" prefWidth="129.0" text="MovieID" visible="false" />
+            <TableColumn fx:id="colTitle" prefWidth="246.0" text="Title" />
+            <TableColumn fx:id="coltime" prefWidth="240.0" text="Time" />
+            <TableColumn fx:id="colRating" prefWidth="242.0" text="Rating " />
          </columns>
       </TableView>
       <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="25.0" layoutY="449.0" onAction="#btnHomeClicked" prefHeight="53.0" prefWidth="105.0" ripplerFill="#b90a0a" text="Home" textFill="#c0b283">

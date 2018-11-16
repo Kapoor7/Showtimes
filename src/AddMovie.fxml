@@ -31,6 +31,6 @@
          </font>
       </Button>
       <JFXComboBox fx:id="cbRating" layoutX="236.0" layoutY="277.0" promptText="Choose a Rating" />
-      <Label fx:id="lblMsg" layoutX="284.0" layoutY="327.0" textFill="#af3131" visible="false" />
+      <Label fx:id="lblMsg" layoutX="219.0" layoutY="327.0" prefHeight="17.0" prefWidth="265.0" textFill="#af3131" visible="false" />
    </children>
 </AnchorPane>

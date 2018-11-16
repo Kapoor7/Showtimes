@@ -1,6 +1,8 @@
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +16,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -25,13 +26,39 @@ import java.util.ResourceBundle;
 public class AddDeleteController {
 
     @FXML
+    private Button btnDeleteMovie;
+
+    @FXML
+    private Button btnDeleteCinema;
+
+    @FXML
+    private Button btnDeleteShowtime;
+
+    @FXML
+    private JFXComboBox<String> cbDeleteMovie;
+
+    @FXML
     private Label lblMsg;
+
+    @FXML
+    private Label lblShowtimeDate;
 
     @FXML
     private JFXTextField txtMovie;
 
     @FXML
+    private JFXComboBox<String> cbDeleteShowtimeMovie;
+
+    @FXML
+    private JFXComboBox<ShowTime> cbDeleteShowtime;
+
+    ObservableList<ShowTime> showtimes = FXCollections.observableArrayList();
+
+    @FXML
     private JFXButton btnBack;
+
+    @FXML
+    private JFXComboBox<String> cbDeleteCinema;
 
     @FXML
     private Button btnSubmit;
@@ -147,9 +174,8 @@ public class AddDeleteController {
             lblMsg.setVisible(true);
             return;
         }
-        if(ConnectionFactory.showTimeExistsAlready()){
-            //TODO: add the parameters in function and call.
-            //If it is true, then alert box.
+        if(ConnectionFactory.showTimeExistsAlready(movie, cinema, Timestamp.valueOf(LocalDateTime.now().toLocalDate().toString() + " " + time + ":00"))){
+            showAlertWithHeaderText("Showtime already exist");
         }
             try
             {
@@ -185,6 +211,10 @@ public class AddDeleteController {
                 prp.execute();
 
                 conn.close();
+                cbTime.setValue(null);
+                cbSession.setValue(null);
+                cbMovie.setValue(null);
+                cbCinema.setValue(null);
                 lblMsg.setText(movie + " has been added at " + cinema + " successfully!");
                 lblMsg.setVisible(true);
 
@@ -192,6 +222,10 @@ public class AddDeleteController {
             } catch (Exception e)
             {
                 lblMsg.setText("Failed to add! Please try again");
+                cbTime.setValue(null);
+                cbSession.setValue(null);
+                cbMovie.setValue(null);
+                cbCinema.setValue(null);
                 lblMsg.setVisible(true);
             }
 
@@ -201,7 +235,7 @@ public class AddDeleteController {
 
     public void initTime()
     {
-
+        lblShowtimeDate.setText(lblShowtimeDate.getText() + "for " + LocalDateTime.now().toLocalDate().format(DateTimeFormatter.ofPattern("dd MMMM yyyy")));
         // cbTime.getItems().add("Please choose a session first");
         cbTime.setDisable(true);
         cbMovie.setOnAction(e->{
@@ -223,24 +257,24 @@ public class AddDeleteController {
             {
                 cbTime.setDisable(false);
                 cbTime.getItems().clear();
-                cbTime.getItems().add("01:00");
-                cbTime.getItems().add("01:30");
-                cbTime.getItems().add("02:15");
-                cbTime.getItems().add("02:40");
-                cbTime.getItems().add("03:20");
-                cbTime.getItems().add("04:45");
+                cbTime.getItems().add("1:00");
+                cbTime.getItems().add("1:30");
+                cbTime.getItems().add("2:15");
+                cbTime.getItems().add("2:40");
+                cbTime.getItems().add("3:20");
+                cbTime.getItems().add("4:45");
             }
             if (cbSession.getValue() == "Evening")
             {
                 cbTime.setDisable(false);
                 cbTime.getItems().clear();
-                cbTime.getItems().add("05:15");
-                cbTime.getItems().add("05:40");
-                cbTime.getItems().add("06:10");
-                cbTime.getItems().add("06:55");
-                cbTime.getItems().add("07:20");
-                cbTime.getItems().add("08:00");
-                cbTime.getItems().add("08:40");
+                cbTime.getItems().add("5:15");
+                cbTime.getItems().add("5:40");
+                cbTime.getItems().add("6:10");
+                cbTime.getItems().add("6:55");
+                cbTime.getItems().add("7:20");
+                cbTime.getItems().add("8:00");
+                cbTime.getItems().add("8:40");
             }
             if (cbSession.getValue() == "Late Night")
             {
@@ -341,6 +375,7 @@ public class AddDeleteController {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
         }
+
 
     }
 
@@ -443,6 +478,274 @@ public class AddDeleteController {
         alert.setHeaderText("Results:");
         alert.setContentText(errorMsg);
         alert.showAndWait();
+    }
+
+    @FXML
+    void btnDeleteMovieClicked(ActionEvent event) {
+        String title = cbDeleteMovie.getValue();
+        if(title != null){
+            try
+            {
+                Connection conn = ConnectionFactory.getConnection();
+
+                String query = "Delete from showtime where MovieID in (Select MovieID from movies where Title = ?)";
+
+                PreparedStatement prp = conn.prepareStatement(query);
+
+                prp.setString(1, title);
+
+                prp.execute();
+
+                query = "Delete from movies where Title = ?";
+                prp = conn.prepareStatement(query);
+                prp.setString(1, title);
+                prp.execute();
+
+                conn.close();
+                cbDeleteMovie.setValue(null);
+                lblMsg.setText(title + " has been removed successfully!");
+                lblMsg.setVisible(true);
+
+
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+                lblMsg.setText(title + " has failed to remove! Please try again later.");
+                lblMsg.setVisible(true);
+            }
+        }
+        else{
+            lblMsg.setText("Please choose a movie to remove");
+            lblMsg.setVisible(true);
+        }
+    }
+
+    @FXML
+    void btnDeleteShowtimeClicked(ActionEvent event) {
+       ShowTime st = cbDeleteShowtime.getValue();
+       String cinema = st.getCinema();
+       String movie = st.getMovie();
+       String time = LocalDateTime.now().toLocalDate().toString() + " " + st.getTime() + ":00";
+       if(st!= null){
+           try
+           {
+               Connection conn = ConnectionFactory.getConnection();
+
+               String query = "Delete from showtime where CinemaID in (Select CinemaID from cinemas where CinemaName = ?) AND MovieID in (Select MovieId from movies where title = ?) AND Time = ?";
+
+               PreparedStatement prp = conn.prepareStatement(query);
+
+               prp.setString(1, cinema);
+               prp.setString(2, movie);
+               prp.setTimestamp(3, Timestamp.valueOf(time));
+
+               prp.execute();
+
+               conn.close();
+               cbDeleteShowtimeMovie.setValue(null);
+               lblMsg.setText(movie + " " + st.toString() + " has been removed successfully!");
+               lblMsg.setVisible(true);
+
+
+           } catch (Exception e)
+           {
+               e.printStackTrace();
+               lblMsg.setText(movie + "" + st.toString() + " has failed to remove! Please try again later.");
+               lblMsg.setVisible(true);
+           }
+       }
+       else{
+           lblMsg.setText("Please choose a showtime to remove");
+           lblMsg.setVisible(true);
+       }
+
+
+
+    }
+
+    public void initDeleteShowtime(){
+        cbDeleteShowtime.setDisable(true);
+        cbDeleteShowtimeMovie.setOnAction(e->{
+            lblMessageChange();
+            if (cbDeleteShowtimeMovie.getValue() == null)
+            {
+                cbDeleteShowtime.setDisable(true);
+            }
+            getShowTimesForMovieDelete(cbDeleteShowtimeMovie.getValue());
+        });
+
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
+
+            // the mysql insert statement
+            String query = " SELECT * FROM movies";
+
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            // execute the preparedstatement
+            ResultSet rs = preparedStmt.executeQuery();
+
+            while (rs.next())
+            {
+                cbDeleteShowtimeMovie.getItems().add(rs.getString("Title"));
+
+            }
+
+            conn.close();
+
+        } catch (Exception e)
+        {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
+        }
+
+    }
+
+    public void getShowTimesForMovieDelete(String movieTitle){
+        cbDeleteShowtime.getItems().clear();
+        cbDeleteShowtime.setDisable(false);
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
+
+            // the mysql insert statement
+            String query = " SELECT * FROM showtime s inner join cinemas c on c.cinemaid = s.cinemaid where movieid in (Select movieid from movies where title = ?) order by time";
+
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, movieTitle);
+            // execute the preparedstatement
+            ResultSet rs = preparedStmt.executeQuery();
+            String time;
+            while (rs.next())
+            {
+                if(rs.getTimestamp("Time").toString().charAt(11) == '0'){
+                    time = rs.getTimestamp("Time").toString().substring(12,16);
+                }else{
+                    time = rs.getTimestamp("Time").toString().substring(11,16);
+                }
+
+                ShowTime newShowTime = new ShowTime();
+                newShowTime.setCinema(rs.getString("CinemaName"));
+                newShowTime.setMovie(movieTitle);
+                newShowTime.setTime(time);
+                showtimes.add(newShowTime);
+                //cbDeleteShowtime.getItems().add(rs.getString("Session") + " " + time + " at " + rs.getString("CinemaName"));
+
+            }
+
+            conn.close();
+
+        } catch (Exception e)
+        {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
+        }
+        cbDeleteShowtime.setItems(showtimes);
+    }
+
+
+    @FXML
+    void btnDeleteCinemaClicked(ActionEvent event) {
+        String cinema = cbDeleteCinema.getValue();
+        if(cinema != null){
+            try
+            {
+                Connection conn = ConnectionFactory.getConnection();
+
+                String query = "Delete from showtime where CinemaID in (Select CinemaID from cinemas where CinemaName = ?)";
+
+                PreparedStatement prp = conn.prepareStatement(query);
+
+                prp.setString(1, cinema);
+
+                prp.execute();
+
+                query = "Delete from cinemas where CinemaName = ?";
+                prp = conn.prepareStatement(query);
+                prp.setString(1, cinema);
+                prp.execute();
+
+                conn.close();
+                cbDeleteCinema.setValue(null);
+                lblMsg.setText(cinema + " has been removed successfully!");
+                lblMsg.setVisible(true);
+
+
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+                lblMsg.setText(cinema + " has failed to remove! Please try again later.");
+                lblMsg.setVisible(true);
+            }
+        }
+        else{
+            lblMsg.setText("Please choose a cinema to remove");
+            lblMsg.setVisible(true);
+        }
+    }
+
+    public void initDeleteCinema(){
+        cbDeleteCinema.setOnAction(e-> {
+            lblMessageChange();
+        });
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
+
+            // the mysql insert statement
+            String query = " SELECT * FROM cinemas";
+
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            // execute the preparedstatement
+            ResultSet rs = preparedStmt.executeQuery();
+
+            while (rs.next())
+            {
+                cbDeleteCinema.getItems().add(rs.getString("CinemaName"));
+
+            }
+
+            conn.close();
+
+        } catch (Exception e)
+        {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void initDeleteMovie(){
+        cbDeleteMovie.setOnAction(e-> {
+            lblMessageChange();
+        });
+        try
+        {
+            Connection conn = ConnectionFactory.getConnection();
+
+            // the mysql insert statement
+            String query = " SELECT * FROM movies";
+
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            // execute the preparedstatement
+            ResultSet rs = preparedStmt.executeQuery();
+
+            while (rs.next())
+            {
+                cbDeleteMovie.getItems().add(rs.getString("Title"));
+
+            }
+
+            conn.close();
+
+        } catch (Exception e)
+        {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
+        }
     }
 
 

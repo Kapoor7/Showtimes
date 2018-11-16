@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class CinemaDetailsController {
     ObservableList<MovieModel> MovieModels = FXCollections.observableArrayList();
@@ -86,10 +87,11 @@ public class CinemaDetailsController {
 
             // the mysql insert statement
             String query = " SELECT * FROM showtime s inner join movies m on s.movieid = m.movieid \n" +
-                    "where cinemaid = " +  cinema.getCinemaID() + " group by M.MovieID";
+                    "where cinemaid = " +  cinema.getCinemaID() + " and time > ? group by M.MovieID";
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, LocalDateTime.now().toLocalDate().toString());
             // preparedStmt.setString(1, movie.getMovieID());
             // execute the preparedstatement
             ResultSet rs = preparedStmt.executeQuery();

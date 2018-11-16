@@ -91,14 +91,59 @@ public class AdminSceneController implements Initializable {
 
 
         @FXML
-        void btnDeleteMClicked(ActionEvent event) {}
+        void btnDeleteMClicked(ActionEvent event) {
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteMovie.fxml"));
+                Stage stage = (Stage) DeleteM.getScene().getWindow();
+
+                Scene scene = new Scene(loader.load());
+                AddDeleteController s = loader.getController();
+                s.initDeleteMovie();
+                stage.setScene(scene);
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
 
         @FXML
-        void btnDeleteCClicked(ActionEvent event) {}
+        void btnDeleteCClicked(ActionEvent event) {
+
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteCinema.fxml"));
+                Stage stage = (Stage) DeleteC.getScene().getWindow();
+
+                Scene scene = new Scene(loader.load());
+                AddDeleteController s = loader.getController();
+                s.initDeleteCinema();
+                stage.setScene(scene);
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
 
 
         @FXML
-        void btnRemoveTimeClicked(ActionEvent event) {}
+        void btnRemoveTimeClicked(ActionEvent event) {
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteShowtime.fxml"));
+                Stage stage = (Stage) RemoveTime.getScene().getWindow();
+
+                Scene scene = new Scene(loader.load());
+                AddDeleteController s = loader.getController();
+                s.initDeleteShowtime();
+                stage.setScene(scene);
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
 
 
         @FXML

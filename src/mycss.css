@@ -11,6 +11,11 @@
     -fx-background-color: #F4F4F4;
 
 }
+.table-view .table-column {
+-fx-alignment: CENTER;
+}
+}
+
 .table-view .placeholder .label {
      -fx-text-fill: white;
      -fx-font-family: 'serif';

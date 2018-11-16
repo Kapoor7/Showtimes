@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class MovieDetailsController {
 
@@ -80,10 +81,11 @@ public class MovieDetailsController {
             /*String query = " SELECT * FROM showtime s inner join cinemas c on s.cinemaid = c.cinemaid \n" +
                     "where movieid = " +  movie.getMovieID() ;*/
             String query = " SELECT *FROM showtime s inner join cinemas c on s.cinemaid = c.cinemaid \n" +
-                    "where movieid = " +  movie.getMovieID()+ " group by C.CinemaID" ; // get distinct movie theaters playing a certain movie
+                    "where movieid = " +  movie.getMovieID()+ " and time > ? group by C.CinemaID" ; // get distinct movie theaters playing a certain movie
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, LocalDateTime.now().toLocalDate().toString());
            // preparedStmt.setString(1, movie.getMovieID());
             // execute the preparedstatement
             ResultSet rs = preparedStmt.executeQuery();
@@ -91,10 +93,11 @@ public class MovieDetailsController {
             while (rs.next()) //for each distinct movie theater get all the showtimes
             {
                 int cinemaID = rs.getInt("CinemaID");
-                String query2 = "SELECT * FROM showtime s inner join cinemas c on s.cinemaid = c.cinemaid where movieid = ? and c.cinemaID = ?";
+                String query2 = "SELECT * FROM showtime s inner join cinemas c on s.cinemaid = c.cinemaid where movieid = ? and c.cinemaID = ? and time > ?";
                 PreparedStatement preparedStmt2 = conn.prepareStatement(query2);
                 preparedStmt2.setString(1, movie.getMovieID());
                 preparedStmt2.setInt(2, cinemaID);
+                preparedStmt2.setString(3, LocalDateTime.now().toLocalDate().toString());
                 ResultSet rs2 = preparedStmt2.executeQuery();
                 StringBuilder sb = new StringBuilder("");
                 while(rs2.next()){
