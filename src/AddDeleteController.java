@@ -610,11 +610,12 @@ public class AddDeleteController {
             Connection conn = ConnectionFactory.getConnection();
 
             // the mysql insert statement
-            String query = " SELECT * FROM showtime s inner join cinemas c on c.cinemaid = s.cinemaid where movieid in (Select movieid from movies where title = ?) order by time";
+            String query = " SELECT * FROM showtime s inner join cinemas c on c.cinemaid = s.cinemaid where time > ? AND movieid in (Select movieid from movies where title = ?) order by time";
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
-            preparedStmt.setString(1, movieTitle);
+            preparedStmt.setString(1, LocalDateTime.now().toLocalDate().toString());
+            preparedStmt.setString(2, movieTitle);
             // execute the preparedstatement
             ResultSet rs = preparedStmt.executeQuery();
             String time;
@@ -633,6 +634,11 @@ public class AddDeleteController {
                 showtimes.add(newShowTime);
                 //cbDeleteShowtime.getItems().add(rs.getString("Session") + " " + time + " at " + rs.getString("CinemaName"));
 
+            }
+            if(showtimes.isEmpty()){
+                cbDeleteShowtime.setDisable(true);
+                lblMsg.setText("No showtimes for this movie today");
+                lblMsg.setVisible(true);
             }
 
             conn.close();
