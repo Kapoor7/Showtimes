@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="519.0" prefWidth="752.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddDeleteController">
+   <children>
+      <Label layoutX="269.0" layoutY="52.0" prefHeight="52.0" prefWidth="174.0" style="-fx-background-color: #f7e7ce;" text="    Remove Movie " textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnBack" layoutX="42.0" layoutY="27.0" onAction="#btnBackClicked" prefHeight="34.0" prefWidth="52.0" style="-fx-background-color: #0c1394;" text="Back" textFill="#ececf2">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <Button fx:id="btnDeleteMovie" layoutX="311.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnDeleteMovieClicked" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #002147;" text="Submit" textFill="#f0eded">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <JFXComboBox fx:id="cbDeleteMovie" layoutX="246.0" layoutY="213.0" prefHeight="52.0" prefWidth="211.0" promptText="       Choose a Movie to Remove" />
+      <Label fx:id="lblMsg" layoutX="219.0" layoutY="278.0" prefHeight="22.0" prefWidth="290.0" textFill="#af3131" visible="false" />
+   </children>
+</AnchorPane>

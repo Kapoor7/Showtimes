@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddDeleteController">
    <children>
-      <Label layoutX="269.0" layoutY="52.0" prefHeight="52.0" prefWidth="174.0" style="-fx-background-color: #f7e7ce;" text="  Add a ShowTime " textAlignment="CENTER">
+      <Label fx:id="lblShowtimeDate" alignment="CENTER" layoutX="123.0" layoutY="52.0" prefHeight="52.0" prefWidth="432.0" style="-fx-background-color: #f7e7ce;" text="  Add a Showtime " textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="lblMsg" layoutX="284.0" layoutY="327.0" textFill="#af3131" visible="false" />
+      <Label fx:id="lblMsg" layoutX="124.0" layoutY="327.0" prefHeight="17.0" prefWidth="432.0" textFill="#af3131" visible="false" />
       <JFXComboBox fx:id="cbCinema" layoutX="126.0" layoutY="181.0" prefHeight="34.0" prefWidth="134.0" promptText="Choose a Cinema" />
       <JFXComboBox fx:id="cbMovie" layoutX="126.0" layoutY="263.0" prefHeight="34.0" prefWidth="127.0" promptText="Choose a Movie" />
       <JFXComboBox fx:id="cbSession" layoutX="415.0" layoutY="186.0" prefHeight="34.0" prefWidth="134.0" promptText="Choose a Session" />

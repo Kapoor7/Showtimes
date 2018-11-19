@@ -31,6 +31,18 @@ public class CinemaModel {
         this.addressY = addressY;
     }
 
+
+    public String getShowTimes()
+    {
+        return showTimes;
+    }
+
+    public void setShowTimes(String showTimes)
+    {
+        this.showTimes = showTimes;
+    }
+
+    private String showTimes;
     private String CinemaID;
     private int addressX;
     private int addressY;

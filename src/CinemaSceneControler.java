@@ -35,6 +35,8 @@ public class CinemaSceneControler implements Initializable{
 
     @FXML
     private JFXButton btnFilter;
+    @FXML
+    private JFXButton btnReset;
 
 
 
@@ -55,7 +57,7 @@ public class CinemaSceneControler implements Initializable{
     void btnFilterClicked(ActionEvent event) {
         if(txtAddress.getText().length() != 0 && txtRadius.getText().length() != 0){
 
-            String[] clientAddress = txtAddress.getText().split(",");
+            String[] clientAddress = txtAddress.getText().replaceAll("\\s", "").split(",");
             if (clientAddress.length > 2 ) {
                 showAlertWithHeaderText("Please enter a valid address. x, y");
                 return;
@@ -153,16 +155,33 @@ public class CinemaSceneControler implements Initializable{
             if (CinemaModels.isEmpty()){
                 showAlertWithHeaderText("No Cinemas found in specified radius. Please enter greater radius.");
             }
-
+            btnReset.setVisible(true);
 
         }else{
             //please enter valid inputs
         }
 
+
     }
 
     double getDistance(int x1, int y1, int x2, int y2){
         return Math.sqrt(Math.pow((x2 - x1) , 2) + Math.pow((y2 - y1), 2) );
+    }
+
+    @FXML
+    void btnResetClicked(ActionEvent event) {
+
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CinemaScene.fxml"));
+            Stage stage = (Stage) btnFilter.getScene().getWindow();
+
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+
+
+        }catch (Exception e){
+            System.err.print(e.getMessage());
+        }
     }
 
     @FXML
@@ -183,8 +202,8 @@ public class CinemaSceneControler implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        txtRadius.setStyle("-fx-text-inner-color: #c0b283;");
-        txtAddress.setStyle("-fx-text-inner-color: #c0b283;");
+        //txtRadius.setStyle("-fx-text-inner-color: #c0b283;");
+        //txtAddress.setStyle("-fx-text-inner-color: #c0b283;");
         try
         {
             Connection conn = ConnectionFactory.getConnection();

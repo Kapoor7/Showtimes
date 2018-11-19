@@ -16,7 +16,7 @@ import java.util.Optional;
 
 public class MovieApp extends Application {
 
-final String pw = "aaaa";
+final String pw = "admin";
 
 
     @FXML
@@ -63,24 +63,27 @@ final String pw = "aaaa";
         inputDialog.setTitle("Admin Login");
         inputDialog.setHeaderText("Enter the password");
         Optional<String> result = inputDialog.showAndWait();
+        if(result.isPresent())
+        {
+            if (result.get().equals(pw))
+            {
 
-        if ( result.get().equals(pw)) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminScene.fxml"));
+                Stage stage = (Stage) btnLogin.getScene().getWindow();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminScene.fxml"));
-            Stage stage = (Stage) btnLogin.getScene().getWindow();
+                Scene scene = new Scene(loader.load());
+                stage.setScene(scene);
 
-            Scene scene = new Scene(loader.load());
-            stage.setScene(scene);
+            } else
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Login Error");
+                alert.setHeaderText("Login failed!");
+                alert.setContentText("WRONG PASSWORD");
 
-        }else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Login Error");
-            alert.setHeaderText("Login failed!");
-            alert.setContentText("WRONG PASSWORD");
-
-            alert.showAndWait();
+                alert.showAndWait();
+            }
         }
-
 
 
 
@@ -98,7 +101,7 @@ final String pw = "aaaa";
         }
         if(root != null)
         {
-            primaryStage.setTitle("Project 4 by Harshad Kapoor and Tanvir Hossain");
+            primaryStage.setTitle("Project 4 by Harshad Kapoor, Tanvir Hossain, and Yassine Raouz");
             primaryStage.setScene(new Scene(root, 740, 500));
             primaryStage.setResizable(true);
             // primaryStage.initStyle(StageStyle.TRANSPARENT);

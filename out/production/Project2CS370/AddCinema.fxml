@@ -19,7 +19,7 @@
             <Font size="13.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtCinema" layoutX="236.0" layoutY="146.0" onKeyPressed="#lblMessageChange" prefHeight="42.0" prefWidth="242.0" promptText="Please Enter The Movie Tiltle">
+      <JFXTextField fx:id="txtCinema" layoutX="236.0" layoutY="146.0" onKeyPressed="#lblMessageChange" prefHeight="42.0" prefWidth="242.0" promptText="Please Enter The Name of Cinema">
          <font>
             <Font size="14.0" />
          </font>

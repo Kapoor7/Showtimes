@@ -18,7 +18,17 @@ public class MovieModel {
         this.time = time;
     }
 
+    public String getShowTimes()
+    {
+        return showTimes;
+    }
 
+    public void setShowTimes(String showTimes)
+    {
+        this.showTimes = showTimes;
+    }
+
+    private String showTimes;
 
 
     public String getMovieID()

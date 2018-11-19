@@ -4,13 +4,28 @@
 }
 
 .table-row-cell:odd{
-    -fx-background-color: #C0B283;
+    -fx-background-color: white;
 
 }
 .table-row-cell:even{
-    -fx-background-color: #F4F4F4;
+    -fx-background-color: #f9f1f1;
 
 }
+.table-view .table-column {
+-fx-alignment: CENTER;
+}
+}
+
+.table-view .placeholder .label {
+     -fx-text-fill: white;
+     -fx-font-family: 'serif';
+     -fx-font-size: 1.666em;
+     -fx-font-weight: bold;
+ }
 
 .table-row-cell:selected
 { -fx-background-color: #2F4F4F; }
+
+.table-row-cell {
+    -fx-cell-size: 48px;
+}

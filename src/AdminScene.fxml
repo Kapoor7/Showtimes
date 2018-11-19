@@ -4,47 +4,12 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminSceneController">
+<AnchorPane prefHeight="509.0" prefWidth="742.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminSceneController">
    <children>
-      <Label layoutX="279.0" layoutY="42.0" prefHeight="60.0" prefWidth="121.0" text="ADMIN" textAlignment="CENTER" textFill="#fafcf9" underline="true">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="addM" layoutX="80.0" layoutY="232.0" onAction="#btnaddMClicked" prefHeight="46.0" prefWidth="108.0" text="ADD Movie" textFill="#09dd09">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="AddC" layoutX="293.0" layoutY="241.0" onAction="#btnAddCClicked" text="Add Cinema" textFill="#1eff05">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="AddTime" layoutX="522.0" layoutY="241.0" onAction="#btnAddTimeClicked" text="Add Show Time" textFill="#1dee06">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="DeleteM" layoutX="80.0" layoutY="318.0" onAction="#btnDeleteMClicked" text="Delete Movie" textFill="#f80101">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="DeleteC" layoutX="293.0" layoutY="318.0" onAction="#btnDeleteCClicked" text="Delete Cinema" textFill="RED">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="RemoveTime" layoutX="522.0" layoutY="318.0" onAction="#btnRemoveTimeClicked" text="Remove show time" textFill="RED">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="7.0" layoutY="450.0" onAction="#btnHomeClicked" prefHeight="53.0" prefWidth="105.0" ripplerFill="#b90a0a" text="Home" textFill="#c0b283">
+      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="7.0" layoutY="450.0" onAction="#btnHomeClicked" prefHeight="53.0" prefWidth="105.0" ripplerFill="#b90a0a" style="-fx-background-color: #f7e7ce;" text="Home">
          <font>
             <Font name="Microsoft YaHei Light" size="18.0" />
          </font>
@@ -52,5 +17,48 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label alignment="CENTER" layoutX="262.0" layoutY="51.0" prefHeight="52.0" prefWidth="174.0" style="-fx-background-color: #f7e7ce;" text="Admin" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="112.0" layoutY="236.0" prefHeight="37.0" prefWidth="514.0" spacing="70.0">
+         <children>
+            <JFXButton fx:id="addM" onAction="#btnaddMClicked" prefHeight="46.0" prefWidth="108.0" style="-fx-background-color: #002147;" text="Add Movie" textFill="#09dd09">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="AddC" onAction="#btnAddCClicked" prefHeight="37.0" prefWidth="117.0" style="-fx-background-color: #002147;" text="Add Cinema" textFill="#1eff05">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="AddTime" onAction="#btnAddTimeClicked" prefHeight="37.0" prefWidth="162.0" style="-fx-background-color: #002147;" text="Add Show Time" textFill="#1dee06">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="112.0" layoutY="308.0" prefHeight="61.0" prefWidth="514.0" spacing="70.0">
+         <children>
+            <JFXButton fx:id="DeleteM" onAction="#btnDeleteMClicked" prefHeight="37.0" prefWidth="108.0" style="-fx-background-color: #02006c;" text="Delete Movie" textFill="#f80101">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="DeleteC" onAction="#btnDeleteCClicked" prefHeight="37.0" prefWidth="117.0" style="-fx-background-color: #02006c;" text="Delete Cinema" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="RemoveTime" onAction="#btnRemoveTimeClicked" prefHeight="37.0" prefWidth="161.0" style="-fx-background-color: #02006c;" text="Remove show time" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
